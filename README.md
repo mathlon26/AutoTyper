@@ -1,51 +1,55 @@
-AutoTyper README
-AutoTyper is a Python script that simulates keyboard input by reading a text file and sending keystrokes to the active application. This can be useful for automating tasks that involve typing text, such as filling out forms or generating repetitive content. AutoTyper also offers the option to add a level of randomness to the typing to make it appear more organic.
+# Keystroke Generator
 
-Usage
-To use AutoTyper, follow these steps:
+This is a Python program that simulates keystrokes based on the contents of a text file. The program uses the `pyautogui` library to send keystrokes to the active window. You can use this program for various purposes, such as automating text input or testing applications that rely on keyboard input.
 
-Make sure you have Python installed on your system. You can download it from python.org.
+## Table of Contents
 
-Install the required packages by running the following command:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Configuration](#configuration)
+- [License](#license)
 
-shell
-Copy code
-pip install pyautogui
-Place the text you want to type in a text file and specify its path in the FILE_PATH variable.
+## Installation
 
-Configure the script's behavior by adjusting the following variables:
+Before using the program, you need to install the required Python packages. These dependencies are listed in the `requirements.txt` file. To install them, you can use pip:
 
-ORGANIC: Set this to True if you want to introduce randomness in typing to make it appear more natural. Set it to False for standard, consistent typing.
-MIN_DELAY and MAX_DELAY: These variables control the minimum and maximum delay (in seconds) between keystrokes. Adjust these values to control the typing speed.
-PROBABILITY_MULTIPLIER: This variable influences the probability of adding an extra delay on space or enter keystrokes when ORGANIC is set to True. Increase this value to increase the chances of extra delays.
-Run the script by executing the following command in your terminal:
+```
+pip install -r requirements.txt
+```
+## Usage
+Once you've installed the required packages, you can run the program by executing the ```main.py``` script. Here's an example of how to use it:
 
-shell
-Copy code
-python autotyper.py
+```
+python keystroke_generator.py
+```
+
+The program will read the contents of the ```text.txt``` file and simulate keystrokes for each character. By default, it uses a standard delay between keystrokes. However, you can configure it to add randomness to the delay for a more organic typing effect.
 The script will wait for 2 seconds to give you time to place the cursor in the desired input field or application.
-
 Once the cursor is in position, the script will start typing the contents of the specified text file using the configured settings.
 
-Example
-Here's an example of how to use AutoTyper with an explanation of the settings:
+## Configuration
+You can configure the behavior of the keystroke generator by editing the variables in the script:
 
-python
-Copy code
+```FILE_PATH```: This variable specifies the path to the text file containing the text you want to type.
+
+```ORGANIC```: Set this variable to True if you want to add randomness to the typing delay. If set to False, the program will use a standard delay.
+
+```MIN_DELAY``` and ```MAX_DELAY```: These variables define the range of delay (in seconds) between keystrokes. If ORGANIC is set to True, the program will randomly select a delay within this range for each character.
+
+```PROBABILITY_MULTIPLIER```: This variable determines the probability of adding extra delay for space and enter keystrokes when ORGANIC is True. A higher value increases the likelihood of additional delay. It must be greater than 0.1.
+
+For example:
+```
 # Configuration
 FILE_PATH = "text.txt"             # Path to the text file to type
 ORGANIC = True                     # Enable organic typing (random delays)
 MIN_DELAY, MAX_DELAY = 0.005, 0.1  # Minimum and maximum typing delays (in seconds)
 PROBABILITY_MULTIPLIER = 0.5       # Probability multiplier for extra delays
+```
 
-# ... (other settings)
+## License
+This program is open-source and distributed under the MIT License. You can find the full text of the license in the LICENSE file included with this repository.
 
-if __name__ == '__main__':
-    time.sleep(2)  # Wait for 2 seconds before typing
-    send_keystrokes(FILE_PATH, ORGANIC, MIN_DELAY, MAX_DELAY, PROBABILITY_MULTIPLIER)
-In this example, the script will type the content of text.txt with organic typing, randomizing delays between keystrokes, and introducing extra delays on space or enter keystrokes with a 50% probability multiplier.
-
-Feel free to modify the configuration to suit your specific needs.
-
-Disclaimer
+### Disclaimer
 Please use AutoTyper responsibly and in compliance with all relevant laws and regulations. Automated typing should only be used for legitimate and ethical purposes.
+Feel free to customize and use this keystroke generator according to your needs. If you have any questions or encounter issues, please don't hesitate to reach out to the developer or the community for assistance. Happy typing!
