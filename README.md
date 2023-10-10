@@ -20,7 +20,7 @@ pip install -r requirements.txt
 Once you've installed the required packages, you can run the program by executing the ```main.py``` script. Here's an example of how to use it:
 
 ```
-python keystroke_generator.py
+python main.py
 ```
 
 The program will read the contents of the ```text.txt``` file and simulate keystrokes for each character. By default, it uses a standard delay between keystrokes. However, you can configure it to add randomness to the delay for a more organic typing effect.
