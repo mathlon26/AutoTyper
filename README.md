@@ -48,7 +48,7 @@ PROBABILITY_MULTIPLIER = 0.5       # Probability multiplier for extra delays
 ```
 
 ## License
-This program is open-source and distributed under the MIT License. You can find the full text of the license in the LICENSE file included with this repository.
+Do with this as you wish.
 
 ### Disclaimer
 Please use AutoTyper responsibly and in compliance with all relevant laws and regulations. Automated typing should only be used for legitimate and ethical purposes.
